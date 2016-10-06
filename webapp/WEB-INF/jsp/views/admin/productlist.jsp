@@ -570,7 +570,7 @@
      				        	alert('YOU HAVE BEEN INSERTED SUCCESSFULLY.');
      				        	isAdded=true;
      				        	clearFormAdd();
-     				        	location.href="${pageContext.request.contextPath}/admin/products";
+     				        	//
      				        }else{
      				        	alert('YOU HAVE ERRORS WHEN INSERT NEW PRODUCT.');
      				        }
@@ -580,7 +580,9 @@
      				    }
     				});  
     			});
-    			
+    			$('#form_add_product').on('hidden.bs.modal', function () {
+    				location.href="${pageContext.request.contextPath}/admin/products";
+    			})
     				$("#images").change(function(){			
     					$("#frmProductAdd").ajaxSubmit({
     						url: "${pageContext.request.contextPath}/admin/rest/images/",
